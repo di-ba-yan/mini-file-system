@@ -1,0 +1,18 @@
+{
+  "name": "simple-file-sync",
+  "version": "1.0.0",
+  "description": "A simple file sync server for internal network",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["file-sync", "upload", "download"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "archiver": "^6.0.1"
+  }
+}

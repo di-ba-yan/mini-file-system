@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文件同步系统</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>文件同步系统</h1>
+      <div class="header-actions">
+        <button id="uploadBtn" class="btn btn-primary">上传文件</button>
+        <button id="uploadFolderBtn" class="btn btn-primary">上传文件夹</button>
+        <button id="createFolderBtn" class="btn btn-success">新建文件夹</button>
+        <button id="downloadBtn" class="btn" disabled>下载选中</button>
+        <button id="deleteBtn" class="btn btn-danger" disabled>删除选中</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- 面包屑导航 -->
+      <div class="breadcrumb" id="breadcrumb"></div>
+
+      <!-- 拖拽上传区域 -->
+      <div id="dropZone" class="drop-zone hidden">
+        <div class="drop-zone-content">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <p>拖拽文件或文件夹到此处上传</p>
+          <small>支持保留文件夹结构</small>
+        </div>
+      </div>
+
+      <!-- 文件列表 -->
+      <div class="file-list" id="fileList">
+        <div class="loading">加载中...</div>
+      </div>
+
+      <!-- 上传进度 -->
+      <div id="uploadProgress" class="upload-progress hidden">
+        <div class="progress-header">
+          <span id="progressText">上传中...</span>
+          <button id="closeProgress" class="btn-close">×</button>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div id="progressDetails"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- 隐藏的文件输入 -->
+  <input type="file" id="fileInput" multiple style="display: none;">
+  <input type="file" id="folderInput" webkitdirectory directory multiple style="display: none;">
+
+  <script src="app.js"></script>
+</body>
+</html>

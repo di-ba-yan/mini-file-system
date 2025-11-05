@@ -1,0 +1,8 @@
+{
+  "host": "0.0.0.0",
+  "port": 3000,
+  "storagePath": "./storage",
+  "maxFileSize": 1073741824,
+  "chunkSize": 5242880,
+  "tempPath": "./temp"
+}
